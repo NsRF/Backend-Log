@@ -1,7 +1,7 @@
-import {DataTypes, Sequelize} from "sequelize";
+import {DataTypes} from "sequelize";
 import db from "../../configuration/db";
 
-export default db.define("Usuario", {
+export default db.define("User", {
     id: {
         type: DataTypes.INTEGER.UNSIGNED,
         primaryKey: true,
@@ -16,10 +16,5 @@ export default db.define("Usuario", {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-    },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: false,
     },
 })
