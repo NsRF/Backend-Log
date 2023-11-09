@@ -1,21 +1,17 @@
 import UserRepository from '../domain/models/user'
-import User from "../domain/models/user";
 
 export default {
     findAll: async () => {
-        const users = await UserRepository.findAll();
-        return users;
+        return await UserRepository.findAll();
     },
     createUser: async (name: string, email: string) => {
-       const newUser = await UserRepository.create({
+        return await UserRepository.create({
             name: name,
             email: email,
-        });
-        return newUser
+        })
     },
     findById: async (id: string) => {
-       const result = await UserRepository.findByPk(id);
-        return result;
+        return await UserRepository.findByPk(id);
     },
     updateUser: async(id: string, user: UserInterface) => {
         await UserRepository.update(

@@ -1,9 +1,14 @@
 import express from 'express'
-
 import db from "./configuration/db";
 import routes from "./routes";
+import cors from 'cors';
 
+const options: cors.CorsOptions = {
+    origin: ['http://localhost:4200']
+}
 const app = express();
+
+app.use(cors(options))
 
 app.use(express.json())
 
